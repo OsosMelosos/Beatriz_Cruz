@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 from pathlib import Path
 import sqlite3
 
@@ -7,7 +8,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-DB = Path(__file__).with_name("turnolab.db")
+DB = Path("/tmp/turnolab.db") if os.getenv("VERCEL") else Path(__file__).with_name("turnolab.db")
 
 
 def connect():
