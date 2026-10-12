@@ -13,7 +13,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": { "service": "backend" }
+      "destination": { "service": "backend", "path": "/flask" }
     },
     {
       "source": "/(.*)",
